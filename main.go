@@ -13,7 +13,7 @@ import (
 func main() {
 	timeStart := time.Now()
 	path := flag.String("p", "", "Path to check.")
-	way := flag.String("w", "", "The way to check.")
+	way := flag.String("w", "", "The way to check.\nPlease choose between SHA1, SHA256, SHA512, MD5 or ALL.")
 	sum := flag.String("s", "", "Checksum should be.")
 	flag.Parse()
 	var cFlag bool = true
@@ -70,6 +70,7 @@ func main() {
 		fmt.Println("Time:", time.Since(timeStart))
 		os.Exit(0)
 	default:
+		fmt.Println("Please choose between SHA1, SHA256, SHA512, MD5 or ALL.")
 		os.Exit(0)
 	}
 	if cFlag {
