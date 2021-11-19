@@ -16,14 +16,12 @@ func MSha1(checker *Checker, wg *sync.WaitGroup, mychan *chan string) {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := sha1.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
@@ -35,14 +33,12 @@ func MSha256(checker *Checker, wg *sync.WaitGroup, mychan *chan string) {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := sha256.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
@@ -54,14 +50,12 @@ func MSha512(checker *Checker, wg *sync.WaitGroup, mychan *chan string) {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := sha512.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
@@ -73,14 +67,12 @@ func MMd5(checker *Checker, wg *sync.WaitGroup, mychan *chan string) {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := md5.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))

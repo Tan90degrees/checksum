@@ -20,14 +20,12 @@ func Sha1(checker *Checker, cFlag bool) bool {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := sha1.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
@@ -46,14 +44,12 @@ func Sha256(checker *Checker, cFlag bool) bool {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := sha256.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
@@ -72,14 +68,12 @@ func Sha512(checker *Checker, cFlag bool) bool {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := sha512.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
@@ -98,14 +92,12 @@ func Md5(checker *Checker, cFlag bool) bool {
 	fp, err := os.Open(checker.Path)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	defer fp.Close()
 	hasher := md5.New()
 	size, err := io.Copy(hasher, fp)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(0)
 	}
 	sumUp := fmt.Sprintf("%X", hasher.Sum(nil))
 	sumLow := fmt.Sprintf("%x", hasher.Sum(nil))
